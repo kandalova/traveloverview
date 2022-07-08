@@ -46,6 +46,12 @@
                         </Record>
                     </Collection>
                 </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                            <PropertyPath>CarrierID</PropertyPath>
+                            <PropertyPath>BookingDate</PropertyPath>
+                    </Collection>
+                </Annotation>
             </Annotations>
         </Schema>
     </edmx:DataServices>
