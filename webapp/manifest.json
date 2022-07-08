@@ -165,7 +165,7 @@
                 "model": "zui_fe_travel_001829_o4",
                 "template": "sap.ovp.cards.v4.table",
                 "settings": {
-                    "title": "{{tableCardInfo}}",
+                    "title": "{{tableCardTitle}}",
                     "entitySet": "Travel",
                     "sortOrder": "ascending",
                     "sortBy": "BeginDate",
@@ -190,6 +190,58 @@
                             "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TravelBeginDateRejected",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ToTravelManage",
                             "value": "Rejected"
+                        }
+                    ]
+                }
+            },
+            "CARD_002": {
+                "model": "mainModel",
+                "template": "sap.ovp.cards.linklist",
+                "settings": {
+                    "title": "{{linkListCardTitle}}",
+                    "listFlavor": "standard",
+                    "staticContent": [
+                        {
+                            "title": "Create Travel",
+                            "imageUri": "sap-icon://create",
+                            "imageAltText": "{{card30_icon_so_man}}",
+                            "targetUri": "https://sap.com",
+                            "openInNewWindow": true
+                        },
+                        {
+                            "title": "Manage Travel",
+                            "imageUri": "sap-icon://edit",
+                            "imageAltText": "{{card30_icon_so_man}}",
+                            "targetUri": "https://sap.com",
+                            "openInNewWindow": true
+                        },
+                        {
+                            "title": "Airport Status",
+                            "imageUri": "sap-icon://message-information",
+                            "imageAltText": "{{card30_icon_so_man}}",
+                            "targetUri": "https://sap.com",
+                            "openInNewWindow": true
+                        },
+                        {
+                            "title": "Location Guides",
+                            "imageUri": "sap-icon://functional-location",
+                            "imageAltText": "{{card30_icon_so_man}}",
+                            "targetUri": "https://sap.com",
+                            "openInNewWindow": true
+                        },
+                        {
+                            "title": "Travel Warnings",
+                            "imageUri": "sap-icon://alert",
+                            "imageAltText": "{{card30_icon_so_man}}",
+                            "targetUri": "https://sap.com",
+                            "openInNewWindow": true
+                        },
+                        {
+                            "title": "Rental Car Booking",
+                            "imageUri": "sap-icon://car-rental",
+                            "imageAltText": "{{card30_icon_so_man}}",
+                            "targetUri": "https://sap.com",
+                            "openInNewWindow": true
                         }
                     ]
                 }
