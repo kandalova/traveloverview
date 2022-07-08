@@ -24,7 +24,7 @@
                         "ZUI_FE_BOOKING_001829_O2_VAN",
                         "annotation"
                     ],
-                    "localUri": "localService/metadata.xml",
+                    "localUri": "localService/mainService/metadata.xml",
                     "odataVersion": "2.0"
                 }
             },
@@ -32,7 +32,7 @@
                 "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_FE_BOOKING_001829_O2_VAN',Version='0001')/$value/",
                 "type": "ODataAnnotation",
                 "settings": {
-                    "localUri": "localService/ZUI_FE_BOOKING_001829_O2_VAN.xml"
+                    "localUri": "localService/mainService/ZUI_FE_BOOKING_001829_O2_VAN.xml"
                 }
             },
             "annotation": {
@@ -40,6 +40,24 @@
                 "uri": "annotations/annotation.xml",
                 "settings": {
                     "localUri": "annotations/annotation.xml"
+                }
+            },
+            "zui_fe_travel_001829_o4": {
+                "uri": "/sap/opu/odata4/sap/zui_fe_travel_001829_o4/srvd/sap/zui_fe_travel_001829_o4/0001/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0",
+                    "annotations": [
+                        "annotation1"
+                    ],
+                    "localUri": "localService/zui_fe_travel_001829_o4/metadata.xml"
+                }
+            },
+            "annotation1": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation1.xml",
+                "settings": {
+                    "localUri": "annotations/annotation1.xml"
                 }
             }
         }
@@ -103,6 +121,16 @@
             "@i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "uri": "i18n/i18n.properties"
+            },
+            "zui_fe_travel_001829_o4": {
+                "dataSource": "zui_fe_travel_001829_o4",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
             }
         },
         "resources": {
@@ -131,6 +159,39 @@
                     "valueSelectionInfo": "{{analyticalCardInfo}}",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#FlightPriceColumn",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ToBookingAnalysis"
+                }
+            },
+            "CARD_001": {
+                "model": "zui_fe_travel_001829_o4",
+                "template": "sap.ovp.cards.v4.table",
+                "settings": {
+                    "title": "{{tableCardInfo}}",
+                    "entitySet": "Travel",
+                    "sortOrder": "ascending",
+                    "sortBy": "BeginDate",
+                    "tabs": [
+                        {
+                            "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#AcceptedTravels",
+                            "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#AcceptedSelection",
+                            "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TravelBeginDateAccepted",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ToTravelManage",
+                            "value": "Accepted"
+                        },
+                        {
+                            "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#OpenInProgressTravels",
+                            "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#OpenInProgressSelection",
+                            "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TravelBeginDateOpenInProgress",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ToTravelManage",
+                            "value": "Open/In Progress"
+                        },
+                        {
+                            "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#RejectedTravels",
+                            "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#RejectedSelection",
+                            "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TravelBeginDateRejected",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ToTravelManage",
+                            "value": "Rejected"
+                        }
+                    ]
                 }
             }
         }
